@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:insert="fragments/styling :: head-style"></div>
+    <title>Blog</title>
+</head>
+<body>
+<div class="container">
+    <div th:insert="fragments/navbar :: navbar"></div>
+    <h1>BLOGGER</h1>
+<br>
+    <div class="row">
+        <div th:each="blog:${posts}">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div id="backH" class="panel-heading">
+                        <h2 id="header" th:text="${blog.title}"></h2>
+                    </div>
+                    <div class="panel-body">
+                        <strong><p id="name" th:text="${blog.author}"/></strong>
+                        <p id="blog" th:text="${blog.blogEntry}" />
+                    </div>
+                    <div class="panel-footer" id="main">
+                        <a id="editButton" th:href="@{'/blog_posts/{id}/edit'(id=${blog.id})}"
+                           class="btn btn-primary" role="button">Edit</a>
+                        <form id="deleteButton" th:action="@{'/blog_posts/{id}/delete'(id=${blog.id})}" th:method="delete">
+                          <button class="btn btn-primary" role="button">Delete</form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a th:href="@{/blog_posts/new}"><button class="btn btn-default">New Blog</button></a>
+
+</div>
+<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
+
+</body>
+</html>

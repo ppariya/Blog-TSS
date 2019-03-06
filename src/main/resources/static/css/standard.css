@@ -1,0 +1,45 @@
+body{
+    background-color: skyblue;
+}
+.container {
+    text-align: center;
+    font-family: "Avenir Next";
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+#main{
+    background-color: lightgray;
+}
+#deleteButton {
+     color: var(blue);
+     float: right;
+ }
+#editButton{
+     margin-left: 980px;
+ }
+#home{
+    float: right;
+}
+#backH{
+    background-color: lightgray;
+}
+#header{
+    text-align: left;
+    font-size: 20px ;
+}
+#name{
+    font-size: 14px;
+}
+#blog{
+    font-size: 12px;
+}
+
+#Re-Blog{
+    float: right;
+}
+.panel-body{
+    text-align: left;
+}
